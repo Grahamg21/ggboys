@@ -88,12 +88,43 @@ body {
   animation: shimmer 3s linear infinite;
 }
 
-/* ── Polaroid photo ── */
-.polaroid {
-  background: #fffef5;
-  padding: 12px 12px 40px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+/* ── Fun photo frames (replaces plain polaroid) ── */
+.fun-frame {
+  padding: 10px 10px 38px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.3);
+  border-radius: 4px;
 }
+.fun-frame-caption {
+  font-family: 'Righteous', cursive;
+  text-align: center;
+  margin-top: 8px;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+/* Hero frame — tie-dye gradient */
+.fun-frame-hero {
+  background: linear-gradient(135deg, #FF6B1A, #FFD700, #FF1493, #a855f7, #00CED1);
+}
+.fun-frame-hero .fun-frame-caption { color: #1a0033; }
+
+/* Cycling color themes for scattered photos */
+.fun-frame-orange  { background: linear-gradient(160deg, #FF6B1A, #FFD700); }
+.fun-frame-purple  { background: linear-gradient(160deg, #a855f7, #FF1493); }
+.fun-frame-teal    { background: linear-gradient(160deg, #00CED1, #39FF14); }
+.fun-frame-magenta { background: linear-gradient(160deg, #FF1493, #FF6B1A); }
+.fun-frame-gold    { background: linear-gradient(160deg, #FFD700, #FF6B1A); }
+.fun-frame-green   { background: linear-gradient(160deg, #39FF14, #00CED1); }
+
+.fun-frame-orange .fun-frame-caption,
+.fun-frame-gold .fun-frame-caption    { color: #1a0033; }
+.fun-frame-purple .fun-frame-caption,
+.fun-frame-teal .fun-frame-caption,
+.fun-frame-magenta .fun-frame-caption,
+.fun-frame-green .fun-frame-caption   { color: #0a0015; }
+
+/* Legacy alias so Hero inline usage still works */
+.polaroid { background: #fffef5; padding: 12px 12px 40px; box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
 
 /* ── Penny grid cell ── */
 .penny-cell {

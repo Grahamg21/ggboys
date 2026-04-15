@@ -138,9 +138,21 @@ export default function PennyTimeline() {
 
             {/* Rows */}
             {collectionGrid.map((row, ri) => {
+              const prevYear = ri > 0 ? collectionGrid[ri - 1].year : null
+              const hasGap   = prevYear && row.year - prevYear > 2
               return (
+                <div key={row.year}>
+                  {/* Era gap divider */}
+                  {hasGap && (
+                    <div className="flex items-center gap-3 my-3" style={{ paddingLeft: 52 }}>
+                      <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, rgba(255,215,0,0.3), transparent)' }} />
+                      <span className="font-display text-xs" style={{ color: 'rgba(255,215,0,0.5)', fontSize: 10 }}>
+                        ··· {row.year - prevYear - 1} yrs ···
+                      </span>
+                      <div className="flex-1 h-px" style={{ background: 'linear-gradient(90deg, transparent, rgba(255,215,0,0.3))' }} />
+                    </div>
+                  )}
                 <motion.div
-                  key={row.year}
                   initial={{ opacity: 0, x: -16 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -152,7 +164,7 @@ export default function PennyTimeline() {
                     className="font-body text-right pr-3 text-xs select-none"
                     style={{
                       width: 52,
-                      color: (row.year === 1954 || row.year === 1957 || row.year === 1909)
+                      color: (row.year === 1954 || row.year === 1957 || row.year === 1909 || row.year === 2025)
                         ? '#FFD700'
                         : MINTS.some(k => row[k]?.count > 0)
                           ? 'rgba(255,255,255,0.5)'
@@ -160,7 +172,7 @@ export default function PennyTimeline() {
                     }}
                   >
                     {row.year}
-                    {(row.year === 1954 || row.year === 1957 || row.year === 1909) && ' ★'}
+                    {(row.year === 1954 || row.year === 1957 || row.year === 1909 || row.year === 2025) && ' ★'}
                   </div>
 
                   {/* Mint dots */}
@@ -213,17 +225,19 @@ export default function PennyTimeline() {
                     )
                   })}
                 </motion.div>
+                </div>
               )
             })}
           </div>
         </motion.div>
 
         {/* Callout cards */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
           {[
-            { year: 1909, label: '★ First Wheat', sub: 'The Lincoln cent begins', color: '#FFD700' },
-            { year: 1954, label: '★ Dad\'s Year', sub: 'Born the same year', color: '#FF6B1A' },
-            { year: 1957, label: '★ Last Wheat', sub: 'End of an era', color: '#00CED1' },
+            { year: 1909, label: '★ First Wheat',  sub: 'The Lincoln cent begins',   color: '#FFD700' },
+            { year: 1954, label: '★ Dad\'s Year',   sub: 'Born the same year',        color: '#FF6B1A' },
+            { year: 1957, label: '★ Last Wheat',   sub: 'End of an era',             color: '#00CED1' },
+            { year: 2025, label: '★ Modern Shield', sub: 'The collection lives on',   color: '#FF1493' },
           ].map(card => (
             <motion.div
               key={card.year}

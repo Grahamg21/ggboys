@@ -120,7 +120,7 @@ export default function Hero() {
           style={{ fontSize: 'clamp(28px, 7vw, 72px)', lineHeight: 1.1, textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}
         >
           Happy Birthday,<br />
-          <span className="gradient-text-cool">Gary Greenfield</span>
+          <span className="gradient-text-cool">Dadio</span>
         </motion.h1>
 
         {/* Date */}
@@ -167,15 +167,15 @@ export default function Hero() {
           className="mt-10 relative"
           style={{ animation: 'float 6s ease-in-out infinite' }}
         >
-          <div className="polaroid" style={{ maxWidth: 380 }}>
+          <div className="fun-frame fun-frame-hero" style={{ maxWidth: 520 }}>
             <img
               src={vwBusPhoto}
-              alt="Gary with his 1964 VW 23-Window Bus"
-              className="w-full object-cover"
+              alt="Dadio with his 1964 VW 23-Window Bus"
+              className="w-full object-cover rounded-xl"
               style={{ aspectRatio: '4/3' }}
             />
-            <p className="font-body text-center text-gray-700 mt-1 text-sm font-semibold">
-              The Captain & His Ship — 1964 VW 23-Window
+            <p className="fun-frame-caption">
+              The Captain and His Ship
             </p>
           </div>
           {/* Glow behind polaroid */}

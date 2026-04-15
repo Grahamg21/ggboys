@@ -126,7 +126,7 @@ export const showcasePennies = [
 ]
 
 // ─────────────────────────────────────────────────────────────
-//  FULL COLLECTION GRID — All wheat penny years 1909–1958
+//  FULL COLLECTION GRID — Wheat era 1909–1957, then modern 2025
 //
 //  Each mint entry is either null (not produced / not owned)
 //  or an object:
@@ -174,7 +174,7 @@ export const collectionGrid = [
   { year: 1941, P: null, D: { count: 1, labels: [],    photos: ['IMG_1016'] }, S: { count: 2, labels: [], photos: ['IMG_1014', 'IMG_1015'] } },
   { year: 1942, P: { count: 2, labels: [],              photos: ['IMG_1015', 'IMG_1016'] }, D: { count: 2, labels: [], photos: ['IMG_1015', 'IMG_1016'] }, S: { count: 1, labels: [], photos: ['IMG_1014'] } },
   { year: 1943, P: null, D: { count: 1, labels: ['STEEL ⚙'], photos: ['IMG_1014'] }, S: { count: 1, labels: ['STEEL ⚙'], photos: ['IMG_1014'] } },
-  { year: 1944, P: null, D: null, S: null },
+  { year: 1944, P: null, D: null, S: { count: 2, labels: [], photos: [] } },
   { year: 1945, P: null, D: { count: 1, labels: [],    photos: ['IMG_1016'] }, S: null },
   { year: 1946, P: null, D: { count: 2, labels: [],    photos: ['IMG_1015', 'IMG_1016'] }, S: { count: 2, labels: ['Peace Penny'], photos: ['IMG_1013', 'IMG_1014'] } },
   { year: 1947, P: null, D: null, S: null },
@@ -188,5 +188,6 @@ export const collectionGrid = [
   { year: 1955, P: null, D: { count: 5, labels: [],    photos: ['IMG_1014', 'IMG_1014', 'IMG_1015', 'IMG_1015', 'IMG_1015'] }, S: { count: 1, labels: [], photos: ['IMG_1014'] } },
   { year: 1956, P: null, D: { count: 1, labels: [],    photos: ['IMG_1014'] }, S: null },
   { year: 1957, P: null, D: { count: 1, labels: ['Last Wheat ★'], photos: ['IMG_1014'] }, S: null },
-  { year: 1958, P: null, D: null, S: null },
+  // Gap from 1958–2024 not shown — jump to modern era
+  { year: 2025, P: null, D: null, S: { count: 1, labels: ['Modern Shield'], photos: [] } },
 ]
