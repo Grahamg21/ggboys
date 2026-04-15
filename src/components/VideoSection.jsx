@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import garyVideo from '../assets/photos/gary-fish.mp4'
+import garyVideo from '../assets/photos/Dad/Dad/gary-fish.mp4'
 
 export default function VideoSection() {
   const videoRef = useRef(null)
