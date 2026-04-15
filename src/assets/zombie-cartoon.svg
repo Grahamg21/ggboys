@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300" width="200" height="300">
+  <!-- Shadow -->
+  <ellipse cx="100" cy="290" rx="50" ry="8" fill="rgba(0,0,0,0.3)"/>
+
+  <!-- Left arm (reaching forward) -->
+  <rect x="8" y="130" width="36" height="18" rx="9" fill="#5a8a3c" transform="rotate(-15,26,139)"/>
+  <rect x="2" y="118" width="28" height="16" rx="8" fill="#4a7a2c" transform="rotate(-30,16,126)"/>
+  <!-- Left hand -->
+  <ellipse cx="6" cy="112" rx="14" ry="11" fill="#5a8a3c"/>
+  <line x1="0" y1="104" x2="-4" y2="96" stroke="#4a7a2c" stroke-width="5" stroke-linecap="round"/>
+  <line x1="6" y1="101" x2="4" y2="92" stroke="#4a7a2c" stroke-width="5" stroke-linecap="round"/>
+  <line x1="13" y1="103" x2="14" y2="94" stroke="#4a7a2c" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Right arm -->
+  <rect x="156" y="128" width="36" height="18" rx="9" fill="#5a8a3c" transform="rotate(15,174,137)"/>
+  <rect x="170" y="116" width="28" height="16" rx="8" fill="#4a7a2c" transform="rotate(30,184,124)"/>
+  <!-- Right hand -->
+  <ellipse cx="194" cy="110" rx="14" ry="11" fill="#5a8a3c"/>
+  <line x1="200" y1="102" x2="204" y2="94" stroke="#4a7a2c" stroke-width="5" stroke-linecap="round"/>
+  <line x1="194" y1="99" x2="196" y2="90" stroke="#4a7a2c" stroke-width="5" stroke-linecap="round"/>
+  <line x1="187" y1="101" x2="186" y2="92" stroke="#4a7a2c" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Body / torso -->
+  <rect x="58" y="155" width="84" height="100" rx="14" fill="#8B4513"/>
+  <!-- Torn shirt rips -->
+  <polygon points="62,200 70,195 68,210 74,205 72,220" fill="#5a2d08"/>
+  <polygon points="128,195 136,192 134,208 140,203 138,218" fill="#5a2d08"/>
+  <!-- Rib bones showing through tear -->
+  <ellipse cx="100" cy="190" rx="22" ry="10" fill="#c8d4b0" opacity="0.7"/>
+  <line x1="88" y1="183" x2="88" y2="197" stroke="#a0b080" stroke-width="3" stroke-linecap="round"/>
+  <line x1="95" y1="181" x2="95" y2="199" stroke="#a0b080" stroke-width="3" stroke-linecap="round"/>
+  <line x1="102" y1="181" x2="102" y2="199" stroke="#a0b080" stroke-width="3" stroke-linecap="round"/>
+  <line x1="109" y1="182" x2="109" y2="198" stroke="#a0b080" stroke-width="3" stroke-linecap="round"/>
+  <line x1="116" y1="184" x2="116" y2="197" stroke="#a0b080" stroke-width="3" stroke-linecap="round"/>
+  <!-- Shirt collar -->
+  <polygon points="84,155 100,168 116,155 110,155 100,164 90,155" fill="#6b3510"/>
+
+  <!-- Legs -->
+  <rect x="64" y="248" width="32" height="46" rx="10" fill="#3a5a1a"/>
+  <rect x="104" y="248" width="32" height="46" rx="10" fill="#3a5a1a"/>
+  <!-- Boots/feet -->
+  <ellipse cx="80" cy="292" rx="20" ry="9" fill="#222"/>
+  <ellipse cx="120" cy="292" rx="20" ry="9" fill="#222"/>
+
+  <!-- Neck -->
+  <rect x="88" y="140" width="24" height="22" rx="6" fill="#5a8a3c"/>
+  <!-- Neck bolt! -->
+  <rect x="84" y="148" width="10" height="6" rx="3" fill="#aaa"/>
+  <rect x="106" y="148" width="10" height="6" rx="3" fill="#aaa"/>
+
+  <!-- Head -->
+  <ellipse cx="100" cy="108" rx="46" ry="50" fill="#6aaa42"/>
+  <!-- Head shading -->
+  <ellipse cx="115" cy="95" rx="20" ry="22" fill="#7bc452" opacity="0.4"/>
+
+  <!-- Hair - messy chunks -->
+  <ellipse cx="70" cy="62" rx="14" ry="18" fill="#2a1a0a" transform="rotate(-20,70,62)"/>
+  <ellipse cx="88" cy="56" rx="12" ry="16" fill="#2a1a0a" transform="rotate(-5,88,56)"/>
+  <ellipse cx="106" cy="55" rx="11" ry="15" fill="#2a1a0a" transform="rotate(10,106,55)"/>
+  <ellipse cx="122" cy="60" rx="10" ry="14" fill="#2a1a0a" transform="rotate(25,122,60)"/>
+  <!-- One chunk sticking straight up -->
+  <ellipse cx="95" cy="52" rx="6" ry="12" fill="#1a0a00" transform="rotate(-15,95,52)"/>
+
+  <!-- Eyes - X marks (undead) -->
+  <circle cx="82" cy="105" r="13" fill="white"/>
+  <circle cx="118" cy="105" r="13" fill="white"/>
+  <!-- X left eye -->
+  <line x1="74" y1="97" x2="90" y2="113" stroke="#cc2200" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="90" y1="97" x2="74" y2="113" stroke="#cc2200" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- X right eye -->
+  <line x1="110" y1="97" x2="126" y2="113" stroke="#cc2200" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="126" y1="97" x2="110" y2="113" stroke="#cc2200" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Mouth - stitched grin -->
+  <path d="M 76 128 Q 100 144 124 128" fill="none" stroke="#2a1a0a" stroke-width="3" stroke-linecap="round"/>
+  <!-- Teeth -->
+  <rect x="85" y="128" width="8" height="10" rx="2" fill="ivory"/>
+  <rect x="96" y="129" width="8" height="11" rx="2" fill="ivory"/>
+  <rect x="107" y="128" width="8" height="10" rx="2" fill="ivory"/>
+  <!-- Stitches on mouth -->
+  <line x1="78" y1="126" x2="80" y2="132" stroke="#1a0a0a" stroke-width="2"/>
+  <line x1="122" y1="126" x2="120" y2="132" stroke="#1a0a0a" stroke-width="2"/>
+
+  <!-- Drool drop -->
+  <path d="M 96 142 Q 94 150 96 156 Q 98 150 96 142" fill="#88dd44" opacity="0.8"/>
+
+  <!-- Wound on head -->
+  <ellipse cx="130" cy="88" rx="8" ry="5" fill="#aa2200" transform="rotate(15,130,88)" opacity="0.8"/>
+  <ellipse cx="130" cy="88" rx="4" ry="2.5" fill="#660000" transform="rotate(15,130,88)"/>
+
+  <!-- Green glow effect around zombie -->
+  <ellipse cx="100" cy="150" rx="90" ry="140" fill="none" stroke="#39FF14" stroke-width="1" opacity="0.15"/>
+</svg>

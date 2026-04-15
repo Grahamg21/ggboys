@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" width="240" height="300">
+
+  <!-- ═══ PORTAL (background) ═══ -->
+  <defs>
+    <radialGradient id="portalGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#00ff88" stop-opacity="0.9"/>
+      <stop offset="40%"  stop-color="#00CED1" stop-opacity="0.6"/>
+      <stop offset="70%"  stop-color="#0088aa" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#001133" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="portalInner" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"  stop-color="#aaffcc"/>
+      <stop offset="60%" stop-color="#00dd88"/>
+      <stop offset="100%" stop-color="#006644"/>
+    </radialGradient>
+  </defs>
+  <!-- Outer glow rings -->
+  <ellipse cx="120" cy="148" rx="106" ry="100" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.25"/>
+  <ellipse cx="120" cy="148" rx="96"  ry="90"  fill="none" stroke="#00CED1" stroke-width="3" opacity="0.35"/>
+  <ellipse cx="120" cy="148" rx="84"  ry="78"  fill="none" stroke="#00ff88" stroke-width="4" opacity="0.5"/>
+  <!-- Portal body -->
+  <ellipse cx="120" cy="148" rx="72" ry="68" fill="url(#portalGrad)"/>
+  <ellipse cx="120" cy="148" rx="52" ry="50" fill="url(#portalInner)" opacity="0.85"/>
+  <!-- Portal swirl lines -->
+  <path d="M 88 120 Q 120 100 152 128 Q 164 150 140 168 Q 110 182 88 160 Q 76 140 96 126" fill="none" stroke="#ffffff" stroke-width="2.5" opacity="0.5" stroke-linecap="round"/>
+  <path d="M 104 114 Q 134 106 154 136 Q 158 155 138 166" fill="none" stroke="#aaffee" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+
+  <!-- ═══ RICK ═══ (left, taller) -->
+  <!-- Rick body - lab coat -->
+  <rect x="18" y="188" width="56" height="70" rx="10" fill="white"/>
+  <!-- Blue shirt visible under coat -->
+  <rect x="34" y="188" width="24" height="70" fill="#5588cc"/>
+  <!-- Coat lapels -->
+  <polygon points="34,188 46,202 46,188" fill="white"/>
+  <polygon points="58,188 46,202 46,188" fill="white"/>
+  <!-- Coat buttons -->
+  <circle cx="46" cy="218" r="3" fill="#ddd"/>
+  <circle cx="46" cy="232" r="3" fill="#ddd"/>
+  <circle cx="46" cy="246" r="3" fill="#ddd"/>
+
+  <!-- Rick legs -->
+  <rect x="24" y="252" width="22" height="36" rx="8" fill="#334466"/>
+  <rect x="50" y="252" width="22" height="36" rx="8" fill="#334466"/>
+  <!-- Rick shoes -->
+  <ellipse cx="35" cy="286" rx="16" ry="7" fill="#222"/>
+  <ellipse cx="61" cy="286" rx="16" ry="7" fill="#222"/>
+
+  <!-- Rick neck -->
+  <rect x="38" y="172" width="16" height="20" rx="5" fill="#e8d4b0"/>
+
+  <!-- Rick head -->
+  <ellipse cx="46" cy="150" rx="34" ry="34" fill="#e8d4b0"/>
+  <!-- Rick face stubble/shadow -->
+  <ellipse cx="46" cy="162" rx="20" ry="12" fill="#d4b890" opacity="0.5"/>
+
+  <!-- Rick's iconic white hair - spiky on top -->
+  <ellipse cx="46" cy="118" rx="36" ry="20" fill="white"/>
+  <!-- Hair spikes -->
+  <polygon points="18,122 12,100 24,116" fill="white"/>
+  <polygon points="26,112 22,88 34,108" fill="white"/>
+  <polygon points="38,108 36,82 46,106" fill="white"/>
+  <polygon points="54,108 56,82 64,108" fill="white"/>
+  <polygon points="66,112 72,90 74,114" fill="white"/>
+
+  <!-- Rick eyes -->
+  <circle cx="36" cy="146" r="7" fill="white"/>
+  <circle cx="56" cy="146" r="7" fill="white"/>
+  <circle cx="37" cy="147" r="4" fill="#2244aa"/>
+  <circle cx="57" cy="147" r="4" fill="#2244aa"/>
+  <circle cx="38" cy="146" r="1.5" fill="black"/>
+  <circle cx="58" cy="146" r="1.5" fill="black"/>
+
+  <!-- Rick's unibrow -->
+  <path d="M 29 138 Q 36 134 43 137" fill="none" stroke="#888" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 49 137 Q 56 134 63 138" fill="none" stroke="#888" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Rick mouth - open, mid-sentence (he's always talking) -->
+  <path d="M 34 162 Q 46 174 58 162" fill="#aa6644"/>
+  <path d="M 34 162 Q 46 168 58 162" fill="#cc8866"/>
+  <!-- Teeth -->
+  <rect x="37" y="162" width="8" height="7" rx="1" fill="ivory"/>
+  <rect x="47" y="162" width="8" height="7" rx="1" fill="ivory"/>
+
+  <!-- Rick drool (he always has a lil drool) -->
+  <path d="M 42 172 Q 40 178 42 183 Q 44 178 42 172" fill="#88bbff" opacity="0.7"/>
+
+  <!-- Rick's portal gun -->
+  <rect x="-2" y="210" width="22" height="12" rx="4" fill="#334466"/>
+  <rect x="14" y="207" width="8" height="8" rx="3" fill="#00ff88"/>
+  <ellipse cx="14" cy="211" rx="5" ry="5" fill="#00ff88" opacity="0.7"/>
+
+  <!-- ═══ MORTY ═══ (right, shorter) -->
+  <!-- Morty body - yellow shirt -->
+  <rect x="164" y="200" width="54" height="60" rx="10" fill="#ffee44"/>
+  <!-- Shirt detail -->
+  <rect x="176" y="200" width="18" height="60" fill="#eecc22" opacity="0.4"/>
+
+  <!-- Morty legs -->
+  <rect x="170" y="254" width="20" height="34" rx="7" fill="#7c5533"/>
+  <rect x="194" y="254" width="20" height="34" rx="7" fill="#7c5533"/>
+  <!-- Morty shoes -->
+  <ellipse cx="180" cy="286" rx="15" ry="7" fill="#222"/>
+  <ellipse cx="204" cy="286" rx="15" ry="7" fill="#222"/>
+
+  <!-- Morty neck -->
+  <rect x="178" y="186" width="14" height="18" rx="5" fill="#f5d4a0"/>
+
+  <!-- Morty head - rounder -->
+  <ellipse cx="185" cy="162" rx="32" ry="34" fill="#f5d4a0"/>
+
+  <!-- Morty ears -->
+  <ellipse cx="154" cy="168" rx="9" ry="12" fill="#f5d4a0"/>
+  <ellipse cx="154" cy="168" rx="5" ry="7" fill="#e8b888" opacity="0.6"/>
+  <ellipse cx="216" cy="168" rx="9" ry="12" fill="#f5d4a0"/>
+  <ellipse cx="216" cy="168" rx="5" ry="7" fill="#e8b888" opacity="0.6"/>
+
+  <!-- Morty hair - simple brown -->
+  <ellipse cx="185" cy="132" rx="30" ry="16" fill="#8B5E3C"/>
+  <ellipse cx="163" cy="140" rx="12" ry="16" fill="#8B5E3C"/>
+  <ellipse cx="207" cy="140" rx="12" ry="16" fill="#8B5E3C"/>
+
+  <!-- Morty eyes - big and worried -->
+  <circle cx="174" cy="160" r="10" fill="white"/>
+  <circle cx="196" cy="160" r="10" fill="white"/>
+  <circle cx="175" cy="161" r="6" fill="#44aacc"/>
+  <circle cx="197" cy="161" r="6" fill="#44aacc"/>
+  <circle cx="176" cy="160" r="3" fill="black"/>
+  <circle cx="198" cy="160" r="3" fill="black"/>
+  <!-- Eye shine -->
+  <circle cx="178" cy="158" r="1.5" fill="white"/>
+  <circle cx="200" cy="158" r="1.5" fill="white"/>
+
+  <!-- Morty eyebrows - worried/raised -->
+  <path d="M 165 148 Q 174 143 181 147" fill="none" stroke="#8B5E3C" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 189 147 Q 196 143 205 148" fill="none" stroke="#8B5E3C" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Morty mouth - nervous smile -->
+  <path d="M 172 178 Q 185 188 198 178" fill="none" stroke="#8B5E3C" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Morty teeth -->
+  <rect x="178" y="178" width="7" height="7" rx="1" fill="ivory"/>
+  <rect x="187" y="178" width="7" height="7" rx="1" fill="ivory"/>
+
+  <!-- "Oh geez" speech bubble above Morty -->
+  <ellipse cx="218" cy="110" rx="20" ry="14" fill="white" opacity="0.92"/>
+  <polygon points="208,120 204,132 215,122" fill="white" opacity="0.92"/>
+  <text x="218" y="106" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333" text-anchor="middle">Oh</text>
+  <text x="218" y="118" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#333" text-anchor="middle">geez!</text>
+
+</svg>

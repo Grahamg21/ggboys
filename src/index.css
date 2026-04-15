@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: #0E0020;
+  color: #f0e6ff;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* ── Animated tie-dye background ── */
+.tiedye-bg {
+  background:
+    radial-gradient(ellipse at 15% 30%, rgba(255, 107, 26, 0.45) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(168, 85, 247, 0.5) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(0, 206, 209, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 75% 75%, rgba(255, 20, 147, 0.35) 0%, transparent 45%),
+    radial-gradient(ellipse at 25% 75%, rgba(255, 215, 0, 0.3) 0%, transparent 45%),
+    radial-gradient(ellipse at 60% 45%, rgba(57, 255, 20, 0.2) 0%, transparent 40%),
+    #0E0020;
+  background-size: 400% 400%;
+  animation: tiedye-shift 10s ease-in-out infinite;
+}
+
+@keyframes tiedye-shift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 0%; }
+  50%  { background-position: 100% 100%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Penny flip card ── */
+.penny-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.penny-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.penny-card.flipped .penny-card-inner {
+  transform: rotateY(180deg);
+}
+
+.penny-face,
+.penny-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 1rem;
+}
+
+.penny-back {
+  transform: rotateY(180deg);
+}
+
+/* ── Section divider swirl ── */
+.swirl-divider {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #FF6B1A, #FFD700, #00CED1, #FF1493, #a855f7, #FF6B1A);
+  background-size: 300% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── Polaroid photo ── */
+.polaroid {
+  background: #fffef5;
+  padding: 12px 12px 40px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ── Penny grid cell ── */
+.penny-cell {
+  transition: all 0.2s ease;
+}
+.penny-cell:hover {
+  transform: scale(1.4);
+  z-index: 10;
+}
+
+/* ── Gradient text ── */
+.gradient-text {
+  background: linear-gradient(135deg, #FFD700 0%, #FF6B1A 35%, #FF1493 65%, #a855f7 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.gradient-text-cool {
+  background: linear-gradient(135deg, #00CED1 0%, #a855f7 50%, #FF1493 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400% center; }
+  100% { background-position: 400% center; }
+}
+
+/* ── Scroll reveal helper ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
