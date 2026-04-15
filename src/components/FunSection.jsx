@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import zombieImg   from '../assets/zombie-cartoon.svg'
-import rickMortyImg from '../assets/rick-morty-cartoon.svg'
+import zombieImg   from '../assets/photos/Dad/Dad/zombie.png'
+import raygunImg   from '../assets/photos/Dad/Dad/raygun.png'
+import rickMortyImg from '../assets/photos/Dad/Dad/rick.png'
 
 // ── CoD Zombies card ─────────────────────────────────────────
 function ZombieCard() {
@@ -42,21 +43,34 @@ function ZombieCard() {
         </div>
       </div>
 
-      {/* Zombie illustration */}
-      <div className="flex items-end gap-4">
-        <img src={zombieImg} alt="Cartoon zombie" className="w-24 drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 8px #39FF14aa)' }} />
-        <div className="flex gap-1 text-2xl pb-2">
-          {[0,1,2,3,4].map(i => (
-            <motion.span
-              key={i}
-              animate={{ y: [0, -4, 0] }}
-              transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.2 }}
-            >
-              🧟
-            </motion.span>
-          ))}
-          <span className="text-2xl ml-1">💀</span>
-        </div>
+      {/* Zombie — upper-left corner */}
+      <img
+        src={zombieImg}
+        alt="CoD Zombie"
+        className="absolute pointer-events-none"
+        style={{ top: -10, left: -10, width: 140, opacity: 0.92, filter: 'drop-shadow(0 0 12px #39FF14aa)' }}
+      />
+
+      {/* Ray Gun — lower-right corner */}
+      <img
+        src={raygunImg}
+        alt="Ray Gun"
+        className="absolute pointer-events-none"
+        style={{ bottom: -8, right: -8, width: 130, opacity: 0.88, filter: 'drop-shadow(0 0 10px #39FF14aa)', transform: 'scaleX(-1)' }}
+      />
+
+      {/* Zombie emoji row */}
+      <div className="flex gap-1 text-2xl mt-16">
+        {[0,1,2,3,4].map(i => (
+          <motion.span
+            key={i}
+            animate={{ y: [0, -4, 0] }}
+            transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.2 }}
+          >
+            🧟
+          </motion.span>
+        ))}
+        <span className="text-2xl ml-1">💀</span>
       </div>
 
       <div>
@@ -114,7 +128,12 @@ function RickMortyCard() {
 
       {/* Rick & Morty illustration */}
       <div className="flex justify-center">
-        <img src={rickMortyImg} alt="Rick and Morty cartoon" className="w-48" style={{ filter: 'drop-shadow(0 0 10px #00CED1aa)' }} />
+        <img
+          src={rickMortyImg}
+          alt="Rick and Morty"
+          className="w-52 rounded-xl"
+          style={{ filter: 'drop-shadow(0 0 12px #00CED1aa)', mixBlendMode: 'lighten' }}
+        />
       </div>
 
       {/* Quote bubble */}

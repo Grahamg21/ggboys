@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { collectionGrid } from '../data/pennies'
+import listPhoto from '../assets/photos/Dad/Dad/list.jpeg'
+import gpaPhoto  from '../assets/photos/Dad/Dad/gpa.jpeg'
 
 const MINTS = ['P', 'D', 'S']
 const MINT_LABELS = { P: 'Philadelphia', D: 'Denver', S: 'San Francisco' }
@@ -99,6 +101,75 @@ export default function PennyTimeline() {
               <p className="font-body text-white/40 text-xs mt-1">{s.label}</p>
             </div>
           ))}
+        </motion.div>
+
+        {/* ── Origin Story ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mb-14 flex flex-col sm:flex-row items-center gap-8 border border-gd-copper/20 rounded-2xl p-6"
+          style={{ background: 'linear-gradient(135deg, rgba(28,8,0,0.6), rgba(18,0,4,0.6))' }}
+        >
+          {/* GPA photo */}
+          <div className="flex-shrink-0 text-center">
+            <div
+              className="inline-block"
+              style={{
+                padding: '8px 8px 32px',
+                background: 'linear-gradient(135deg, #2a1500, #1a0008)',
+                boxShadow: '0 6px 24px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,115,51,0.3)',
+                borderRadius: 4,
+                transform: 'rotate(-2deg)',
+              }}
+            >
+              <img
+                src={gpaPhoto}
+                alt="Grandpa with the penny catalog"
+                style={{ width: 150, height: 150, objectFit: 'cover', display: 'block' }}
+              />
+              <p className="font-body text-gd-copper/70 text-xs text-center mt-2" style={{ fontSize: 10 }}>
+                The Man Behind the List
+              </p>
+            </div>
+          </div>
+
+          {/* List photo */}
+          <div className="flex-shrink-0 text-center">
+            <div
+              className="inline-block"
+              style={{
+                padding: '8px 8px 32px',
+                background: 'linear-gradient(135deg, #2a1500, #1a0008)',
+                boxShadow: '0 6px 24px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,115,51,0.3)',
+                borderRadius: 4,
+                transform: 'rotate(1.5deg)',
+              }}
+            >
+              <img
+                src={listPhoto}
+                alt="Original handwritten penny catalog"
+                style={{ width: 150, height: 150, objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+              />
+              <p className="font-body text-gd-copper/70 text-xs text-center mt-2" style={{ fontSize: 10 }}>
+                The Original Catalog
+              </p>
+            </div>
+          </div>
+
+          {/* Copy */}
+          <div className="text-center sm:text-left">
+            <p className="font-display text-gd-gold text-lg mb-2">Where It All Started</p>
+            <p className="font-body text-white/60 text-sm leading-relaxed">
+              Long before spreadsheets, Grandpa tracked every coin by hand on a paper bag.
+              That original list — years, quantities, mints — is the foundation of the
+              Greenfield Collection you see mapped below.
+            </p>
+            <p className="font-body text-gd-copper/70 text-xs mt-3 italic">
+              The collection lives on.
+            </p>
+          </div>
         </motion.div>
 
         {/* Hover tooltip */}
