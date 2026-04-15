@@ -12,7 +12,7 @@ function PennyCard({ penny, index }) {
       viewport={{ once: true, margin: '-60px' }}
       transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
       className={`penny-card ${flipped ? 'flipped' : ''}`}
-      style={{ height: 260 }}
+      style={{ height: 300 }}
       onClick={() => setFlipped(f => !f)}
     >
       <div className="penny-card-inner">
@@ -55,20 +55,17 @@ function PennyCard({ penny, index }) {
 
         {/* ── BACK ── */}
         <div
-          className="penny-back flex flex-col justify-between p-5 border border-gd-copper/40"
+          className="penny-back flex flex-col justify-between p-4 border border-gd-copper/40 overflow-hidden"
           style={{
             borderRadius: '1rem',
             background: `linear-gradient(135deg, #1c0800, #200010)`,
           }}
         >
-          <div>
-            <p className="font-display text-gd-gold text-base mb-2">{penny.label}</p>
-            <p className="font-body text-white/80 text-xs leading-relaxed mb-3">{penny.description}</p>
+          <div className="flex-1 overflow-hidden">
+            <p className="font-display text-gd-gold text-sm mb-2">{penny.label}</p>
+            <p className="font-body text-white/80 leading-relaxed" style={{ fontSize: 11 }}>{penny.description}</p>
           </div>
-          <div className="border-t border-gd-copper/30 pt-3">
-            <p className="font-body text-gd-teal text-xs leading-relaxed italic">💡 {penny.funFact}</p>
-          </div>
-          <p className="font-body text-white/30 text-xs mt-2 text-center">Tap to flip back</p>
+          <p className="font-body text-white/30 text-center mt-3 flex-shrink-0" style={{ fontSize: 10 }}>Tap to flip back</p>
         </div>
       </div>
     </motion.div>

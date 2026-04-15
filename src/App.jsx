@@ -8,16 +8,16 @@ import FunSection     from './components/FunSection'
 import SwirlDivider   from './components/SwirlDivider'
 
 // ── Photos ───────────────────────────────────────────────────
-import p1  from './assets/photos/Dad/20150415_140814_Original.jpg'
-import p2  from './assets/photos/Dad/FullSizeRender.jpeg'
-import p3  from './assets/photos/Dad/IMG_0913.jpeg'
-import p4  from './assets/photos/Dad/IMG_1034 - Copy.jpeg'
-import p5  from './assets/photos/Dad/IMG_1034.jpeg'
-import p6  from './assets/photos/Dad/IMG_1647.jpeg'
-import p7  from './assets/photos/Dad/IMG_2164.jpeg'
-import p8  from './assets/photos/Dad/IMG_4578.jpeg'
-import p9  from './assets/photos/Dad/IMG_4599.jpeg'
-import p10 from './assets/photos/Dad/IMG_9431.JPG'
+import p1  from './assets/photos/Dad/Dad/20150415_140814_Original.jpg'
+import p2  from './assets/photos/Dad/Dad/FullSizeRender.jpeg'
+import p3  from './assets/photos/Dad/Dad/IMG_0913.jpeg'
+import p4  from './assets/photos/Dad/Dad/IMG_1034.jpeg'
+import p5  from './assets/photos/Dad/Dad/IMG_1470.jpeg'
+import p6  from './assets/photos/Dad/Dad/IMG_1509.jpeg'
+import p7  from './assets/photos/Dad/Dad/IMG_1647.jpeg'
+import p8  from './assets/photos/Dad/Dad/IMG_2164.jpeg'
+import p9  from './assets/photos/Dad/Dad/IMG_4578.jpeg'
+import p10 from './assets/photos/Dad/Dad/IMG_4599.jpeg'
 
 // Scattered between sections — feel free to adjust captions & rotations
 const photosTop = [
