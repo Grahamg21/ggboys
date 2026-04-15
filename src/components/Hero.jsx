@@ -1,6 +1,7 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import vwBusPhoto from '../assets/photos/Dad/Dad/IMG_1034.jpeg'
+import Lightbox from './Lightbox'
 
 const DAYS_REMAINING = (() => {
   const today = new Date()
@@ -11,6 +12,7 @@ const DAYS_REMAINING = (() => {
 
 export default function Hero() {
   const canvasRef = useRef(null)
+  const [lightbox, setLightbox] = useState(false)
 
   // Animated swirling tie-dye canvas background
   useEffect(() => {
@@ -167,7 +169,11 @@ export default function Hero() {
           className="mt-10 relative"
           style={{ animation: 'float 6s ease-in-out infinite' }}
         >
-          <div className="fun-frame fun-frame-hero" style={{ maxWidth: 520 }}>
+          <div
+            className="fun-frame fun-frame-hero"
+            style={{ maxWidth: 520, cursor: 'zoom-in' }}
+            onClick={() => setLightbox(true)}
+          >
             <img
               src={vwBusPhoto}
               alt="Dadio with his 1964 VW 23-Window Bus"
@@ -200,6 +206,10 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      {lightbox && (
+        <Lightbox src={vwBusPhoto} alt="Dadio with his 1964 VW 23-Window Bus" onClose={() => setLightbox(false)} />
+      )}
     </section>
   )
 }

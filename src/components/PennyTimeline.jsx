@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { collectionGrid } from '../data/pennies'
 import listPhoto from '../assets/photos/Dad/Dad/list.jpeg'
 import gpaPhoto  from '../assets/photos/Dad/Dad/gpa.jpeg'
+import Lightbox  from './Lightbox'
 
 const MINTS = ['P', 'D', 'S']
 const MINT_LABELS = { P: 'Philadelphia', D: 'Denver', S: 'San Francisco' }
@@ -179,30 +180,12 @@ export default function PennyTimeline() {
           </div>
         </motion.div>
 
-        {/* ── Lightbox ── */}
         {lightbox && (
-          <div
-            className="fixed inset-0 flex items-center justify-center z-50"
-            style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(6px)' }}
-            onClick={() => setLightbox(null)}
-          >
-            <motion.img
-              initial={{ opacity: 0, scale: 0.88 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.25 }}
-              src={lightbox === 'gpa' ? gpaPhoto : listPhoto}
-              alt={lightbox === 'gpa' ? 'Dad with the penny catalog' : 'Original handwritten penny catalog'}
-              style={{ maxWidth: '90vw', maxHeight: '90vh', borderRadius: 8, boxShadow: '0 0 60px rgba(184,115,51,0.4)' }}
-              onClick={e => e.stopPropagation()}
-            />
-            <button
-              onClick={() => setLightbox(null)}
-              className="absolute top-6 right-8 font-display text-white/60 text-3xl leading-none"
-              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
-            >
-              ×
-            </button>
-          </div>
+          <Lightbox
+            src={lightbox === 'gpa' ? gpaPhoto : listPhoto}
+            alt={lightbox === 'gpa' ? 'Dad with the penny catalog' : 'Original handwritten penny catalog'}
+            onClose={() => setLightbox(null)}
+          />
         )}
 
         {/* Hover tooltip */}

@@ -13,7 +13,7 @@ function PennyCard({ penny, index }) {
       viewport={{ once: true, margin: '-60px' }}
       transition={{ delay: index * 0.08, duration: 0.5, ease: 'easeOut' }}
       className={`penny-card ${flipped ? 'flipped' : ''}`}
-      style={{ height: 300 }}
+      style={{ height: 330 }}
       onClick={() => setFlipped(f => !f)}
     >
       <div className="penny-card-inner">
@@ -66,7 +66,20 @@ function PennyCard({ penny, index }) {
             <p className="font-display text-gd-gold text-sm mb-2">{penny.label}</p>
             <p className="font-body text-white/80 leading-relaxed" style={{ fontSize: 11 }}>{penny.description}</p>
           </div>
-          <p className="font-body text-white/30 text-center mt-3 flex-shrink-0" style={{ fontSize: 10 }}>Tap to flip back</p>
+
+          {/* Minted + value stats */}
+          <div className="mt-3 flex-shrink-0 border-t border-gd-copper/20 pt-2 flex justify-between gap-2">
+            <div>
+              <p className="font-body text-gd-copper/50 uppercase tracking-widest" style={{ fontSize: 8 }}>Total Minted</p>
+              <p className="font-display text-gd-copper text-xs">{penny.minted}</p>
+            </div>
+            <div className="text-right">
+              <p className="font-body text-gd-copper/50 uppercase tracking-widest" style={{ fontSize: 8 }}>Est. Value</p>
+              <p className="font-display text-gd-gold text-xs">{penny.value}</p>
+            </div>
+          </div>
+
+          <p className="font-body text-white/30 text-center mt-2 flex-shrink-0" style={{ fontSize: 10 }}>Tap to flip back</p>
         </div>
       </div>
     </motion.div>

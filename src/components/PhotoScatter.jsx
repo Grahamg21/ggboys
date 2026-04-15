@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Lightbox from './Lightbox'
 
 const FRAME_THEMES = [
   'fun-frame-orange',
@@ -10,6 +12,8 @@ const FRAME_THEMES = [
 ]
 
 export default function PhotoScatter({ photos = [], heading }) {
+  const [lightbox, setLightbox] = useState(null) // { src, alt }
+
   if (!photos.length) return null
 
   return (
@@ -37,7 +41,8 @@ export default function PhotoScatter({ photos = [], heading }) {
               transition={{ delay: i * 0.1, duration: 0.6, ease: 'easeOut' }}
               whileHover={{ scale: 1.06, rotate: 0, zIndex: 20 }}
               className={`fun-frame ${theme} flex-shrink-0`}
-              style={{ width: 200, cursor: 'pointer' }}
+              style={{ width: 200, cursor: 'zoom-in' }}
+              onClick={() => setLightbox({ src: photo.src, alt: photo.caption || '' })}
             >
               <img
                 src={photo.src}
@@ -52,6 +57,10 @@ export default function PhotoScatter({ photos = [], heading }) {
           )
         })}
       </div>
+
+      {lightbox && (
+        <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />
+      )}
     </div>
   )
 }

@@ -12,7 +12,8 @@ export const showcasePennies = [
     grade: 'First Year',
     photo: 'IMG_1015',
     description: 'The very first Lincoln wheat cent ever struck — replacing the Indian Head penny in 1909 to honor the 100th anniversary of Lincoln\'s birth. A cornerstone of any serious collection.',
-    funFact: 'Check the reverse for "VDB" initials below the wheat stalks. If present, this is a 1909 VDB — one of the most sought-after coins in American numismatics.',
+    minted: '72.7 million',
+    value: '$3 – $15',
     color: '#B87333',
   },
   {
@@ -24,7 +25,8 @@ export const showcasePennies = [
     grade: '$$',
     photo: 'IMG_1013',
     description: 'A scarce Denver issue from the early wheat series, flagged $$ by the collector — indicating noticeably better-than-average condition. Grade multiplies value significantly on scarce dates.',
-    funFact: 'Denver cents from this era are harder to find in good condition than Philadelphia issues — the western circulation was rougher on coins.',
+    minted: '35.9 million',
+    value: '$5 – $30',
     color: '#A0522D',
   },
   {
@@ -36,7 +38,8 @@ export const showcasePennies = [
     grade: 'Early Series',
     photo: 'IMG_1016',
     description: 'A low-mintage Philadelphia issue from the formative early years of the Lincoln cent. Pre-1915 wheat pennies command strong collector demand across all grades.',
-    funFact: 'Noted as "No Mint written" — the absence of a mint mark confirms this Philadelphia issue, as all P-mint coins were struck without a mintmark until 1942.',
+    minted: '101.2 million',
+    value: '$3 – $12',
     color: '#CD853F',
   },
   {
@@ -48,7 +51,8 @@ export const showcasePennies = [
     grade: 'STEEL',
     photo: 'IMG_1014',
     description: 'The U.S. Mint switched from copper to zinc-coated steel in 1943 so copper could support the WWII war effort. Denver issues are slightly less common than Philadelphia.',
-    funFact: 'A magnet will stick to a genuine 1943 steel cent — a quick authentication test. The rare prize is a 1943 copper, struck by mistake on leftover planchets.',
+    minted: '217.7 million',
+    value: '$0.25 – $3',
     color: '#8a8a8a',
   },
   {
@@ -60,7 +64,8 @@ export const showcasePennies = [
     grade: 'STEEL',
     photo: 'IMG_1014',
     description: 'The San Francisco wartime steel cent — the scarcest of the three 1943 mint marks. Pairs with the Denver issue to make a compelling two-coin wartime set.',
-    funFact: 'Both 1943 steel cents in the collection represent the only year in U.S. history where Lincoln cents were made of steel rather than copper.',
+    minted: '191.6 million',
+    value: '$0.50 – $4',
     color: '#9a9a9a',
   },
   {
@@ -72,7 +77,8 @@ export const showcasePennies = [
     grade: '$',
     photo: 'IMG_1013',
     description: 'A WWI-era San Francisco cent in better-than-average condition. S-mint coins from this period have notoriously low survival rates — most were heavily circulated on the West Coast.',
-    funFact: 'The year 1918 saw record coin production to meet wartime demand, yet quality survivors remain genuinely scarce over a century later.',
+    minted: '34.7 million',
+    value: '$2 – $18',
     color: '#B87333',
   },
   {
@@ -84,7 +90,8 @@ export const showcasePennies = [
     grade: 'Depression Era',
     photo: 'IMG_1013',
     description: 'A Depression-era key date with dramatically reduced mintage. As the economy collapsed, demand for coinage plummeted — making 1931 Philadelphia cents genuinely scarce.',
-    funFact: 'The collection holds two examples of this date — a rare duplication for a coin this sought-after.',
+    minted: '19.4 million',
+    value: '$8 – $45',
     color: '#A0522D',
   },
   {
@@ -96,7 +103,8 @@ export const showcasePennies = [
     grade: '$ (×3)',
     photo: 'IMG_1013',
     description: 'A semi-key San Francisco date with significantly lower mintage than the Philadelphia issue that year. The collection holds three examples, all in better condition.',
-    funFact: 'Having three quality examples of a semi-key date is a hallmark of a serious collector — most sets settle for one.',
+    minted: '24.3 million',
+    value: '$4 – $25',
     color: '#CD853F',
   },
   {
@@ -108,7 +116,8 @@ export const showcasePennies = [
     grade: 'Post-WWI',
     photo: 'IMG_1014',
     description: 'Often overlooked but genuinely scarce — post-WWI economic uncertainty reduced coin production dramatically in 1921. A strong addition to any collection of early wheat cents.',
-    funFact: '1921 is one of those dates that surprises new collectors. The low mintage is real, but the coin doesn\'t always get the recognition it deserves.',
+    minted: '39.2 million',
+    value: '$5 – $35',
     color: '#8B6914',
   },
   {
@@ -120,7 +129,8 @@ export const showcasePennies = [
     grade: 'Late 20s S-Mint',
     photo: 'IMG_1013',
     description: 'Late 1920s San Francisco issues carry lower mintages and strong desirability across the series. This coin sits right at the edge of the Great Depression era.',
-    funFact: 'Struck the same year as the stock market crash — just months before the world changed forever.',
+    minted: '50.1 million',
+    value: '$3 – $20',
     color: '#B87333',
   },
 ]
