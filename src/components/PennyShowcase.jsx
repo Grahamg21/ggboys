@@ -93,7 +93,7 @@ export default function PennyShowcase() {
           src={bannerPhoto}
           alt="The GG Boys sorting the collection"
           className="w-full h-full object-cover"
-          style={{ objectPosition: 'center 30%' }}
+          style={{ objectPosition: 'center 70%' }}
         />
 
         {/* Tie-dye colour wash — very subtle */}

@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-// If gary-vw-bus.jpeg is missing, replace this path with any photo from Dad/Dad/
-import vwBusPhoto from '../assets/photos/Dad/Dad/IMG_4599.jpeg'
+import vwBusPhoto from '../assets/photos/Dad/Dad/IMG_1034.jpeg'
 
 const DAYS_REMAINING = (() => {
   const today = new Date()

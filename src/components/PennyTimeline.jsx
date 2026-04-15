@@ -21,7 +21,8 @@ function dotSize(count) {
 }
 
 export default function PennyTimeline() {
-  const [hovered, setHovered] = useState(null) // { year, mint }
+  const [hovered,  setHovered]  = useState(null) // { year, mint }
+  const [lightbox, setLightbox] = useState(null) // 'gpa' | 'list' | null
 
   const hoveredRow  = hovered ? collectionGrid.find(r => r.year === hovered.year) : null
   const hoveredData = hoveredRow?.[hovered?.mint]
@@ -112,47 +113,53 @@ export default function PennyTimeline() {
           className="mb-14 flex flex-col sm:flex-row items-center gap-8 border border-gd-copper/20 rounded-2xl p-6"
           style={{ background: 'linear-gradient(135deg, rgba(28,8,0,0.6), rgba(18,0,4,0.6))' }}
         >
-          {/* GPA photo */}
-          <div className="flex-shrink-0 text-center">
+          {/* GPA photo — natural aspect ratio, clickable */}
+          <div className="flex-shrink-0 text-center cursor-pointer" onClick={() => setLightbox('gpa')}>
             <div
-              className="inline-block"
               style={{
+                display: 'inline-block',
                 padding: '8px 8px 32px',
                 background: 'linear-gradient(135deg, #2a1500, #1a0008)',
                 boxShadow: '0 6px 24px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,115,51,0.3)',
                 borderRadius: 4,
                 transform: 'rotate(-2deg)',
+                transition: 'transform 0.2s',
               }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'rotate(-1deg) scale(1.04)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'rotate(-2deg)'}
             >
               <img
                 src={gpaPhoto}
-                alt="Grandpa with the penny catalog"
-                style={{ width: 150, height: 150, objectFit: 'cover', display: 'block' }}
+                alt="Dad with the penny catalog"
+                style={{ width: 150, display: 'block' }}
               />
-              <p className="font-body text-gd-copper/70 text-xs text-center mt-2" style={{ fontSize: 10 }}>
+              <p className="font-body text-gd-copper/70 text-center mt-2" style={{ fontSize: 10 }}>
                 The Man Behind the List
               </p>
             </div>
           </div>
 
-          {/* List photo */}
-          <div className="flex-shrink-0 text-center">
+          {/* List photo — natural aspect ratio, clickable */}
+          <div className="flex-shrink-0 text-center cursor-pointer" onClick={() => setLightbox('list')}>
             <div
-              className="inline-block"
               style={{
+                display: 'inline-block',
                 padding: '8px 8px 32px',
                 background: 'linear-gradient(135deg, #2a1500, #1a0008)',
                 boxShadow: '0 6px 24px rgba(0,0,0,0.6), 0 0 0 1px rgba(184,115,51,0.3)',
                 borderRadius: 4,
                 transform: 'rotate(1.5deg)',
+                transition: 'transform 0.2s',
               }}
+              onMouseEnter={e => e.currentTarget.style.transform = 'rotate(0.5deg) scale(1.04)'}
+              onMouseLeave={e => e.currentTarget.style.transform = 'rotate(1.5deg)'}
             >
               <img
                 src={listPhoto}
                 alt="Original handwritten penny catalog"
-                style={{ width: 150, height: 150, objectFit: 'cover', objectPosition: 'top', display: 'block' }}
+                style={{ width: 150, display: 'block' }}
               />
-              <p className="font-body text-gd-copper/70 text-xs text-center mt-2" style={{ fontSize: 10 }}>
+              <p className="font-body text-gd-copper/70 text-center mt-2" style={{ fontSize: 10 }}>
                 The Original Catalog
               </p>
             </div>
@@ -162,15 +169,41 @@ export default function PennyTimeline() {
           <div className="text-center sm:text-left">
             <p className="font-display text-gd-gold text-lg mb-2">Where It All Started</p>
             <p className="font-body text-white/60 text-sm leading-relaxed">
-              Long before spreadsheets, Grandpa tracked every coin by hand on a paper bag.
+              Long before spreadsheets, Dad tracked every coin by hand on a paper bag.
               That original list — years, quantities, mints — is the foundation of the
               Greenfield Collection you see mapped below.
             </p>
             <p className="font-body text-gd-copper/70 text-xs mt-3 italic">
-              The collection lives on.
+              Tap either photo to enlarge.
             </p>
           </div>
         </motion.div>
+
+        {/* ── Lightbox ── */}
+        {lightbox && (
+          <div
+            className="fixed inset-0 flex items-center justify-center z-50"
+            style={{ background: 'rgba(0,0,0,0.88)', backdropFilter: 'blur(6px)' }}
+            onClick={() => setLightbox(null)}
+          >
+            <motion.img
+              initial={{ opacity: 0, scale: 0.88 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.25 }}
+              src={lightbox === 'gpa' ? gpaPhoto : listPhoto}
+              alt={lightbox === 'gpa' ? 'Dad with the penny catalog' : 'Original handwritten penny catalog'}
+              style={{ maxWidth: '90vw', maxHeight: '90vh', borderRadius: 8, boxShadow: '0 0 60px rgba(184,115,51,0.4)' }}
+              onClick={e => e.stopPropagation()}
+            />
+            <button
+              onClick={() => setLightbox(null)}
+              className="absolute top-6 right-8 font-display text-white/60 text-3xl leading-none"
+              style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+            >
+              ×
+            </button>
+          </div>
+        )}
 
         {/* Hover tooltip */}
         <div className="text-center mb-4 h-6">

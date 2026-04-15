@@ -12,7 +12,7 @@ function ZombieCard() {
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
       whileHover={{ scale: 1.03 }}
-      className="relative overflow-hidden rounded-2xl p-6 flex flex-col gap-4 border border-green-900/60"
+      className="relative overflow-hidden rounded-2xl p-6 border border-green-900/60"
       style={{
         background: 'linear-gradient(135deg, #0a1a00 0%, #0d2b0a 50%, #001a08 100%)',
         boxShadow: '0 0 30px rgba(57,255,20,0.12), inset 0 0 60px rgba(0,0,0,0.4)',
@@ -27,70 +27,79 @@ function ZombieCard() {
         }}
       />
 
-      {/* Round counter */}
-      <div className="flex items-center gap-3">
-        <div
-          className="font-display text-5xl font-bold"
-          style={{ color: '#39FF14', textShadow: '0 0 20px #39FF14, 0 0 40px #39FF14' }}
-        >
-          ROUND
-        </div>
-        <div
-          className="font-display text-7xl font-bold leading-none"
-          style={{ color: '#FFD700', textShadow: '0 0 20px #FFD700, 0 0 40px #FF6B1A' }}
-        >
-          72
-        </div>
-      </div>
-
-      {/* Zombie — upper-left corner */}
+      {/* Zombie — upper-left, behind content layer */}
       <img
         src={zombieImg}
         alt="CoD Zombie"
         className="absolute pointer-events-none"
-        style={{ top: -10, left: -10, width: 140, opacity: 0.92, filter: 'drop-shadow(0 0 12px #39FF14aa)' }}
+        style={{ top: -8, left: -8, width: 130, opacity: 0.88, filter: 'drop-shadow(0 0 12px #39FF14aa)', zIndex: 0 }}
       />
 
-      {/* Ray Gun — lower-right corner */}
-      <img
-        src={raygunImg}
-        alt="Ray Gun"
-        className="absolute pointer-events-none"
-        style={{ bottom: -8, right: -8, width: 130, opacity: 0.88, filter: 'drop-shadow(0 0 10px #39FF14aa)', transform: 'scaleX(-1)' }}
-      />
+      {/* All content sits above zombie */}
+      <div className="relative flex flex-col gap-4" style={{ zIndex: 1 }}>
 
-      {/* Zombie emoji row */}
-      <div className="flex gap-1 text-2xl mt-16">
-        {[0,1,2,3,4].map(i => (
-          <motion.span
-            key={i}
-            animate={{ y: [0, -4, 0] }}
-            transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.2 }}
+        {/* Round counter — shifted right to clear the zombie */}
+        <div className="flex items-center gap-3" style={{ marginLeft: 118 }}>
+          <div
+            className="font-display text-5xl font-bold"
+            style={{ color: '#39FF14', textShadow: '0 0 20px #39FF14, 0 0 40px #39FF14' }}
           >
-            🧟
-          </motion.span>
-        ))}
-        <span className="text-2xl ml-1">💀</span>
-      </div>
+            ROUND
+          </div>
+          <div
+            className="font-display text-7xl font-bold leading-none"
+            style={{ color: '#FFD700', textShadow: '0 0 20px #FFD700, 0 0 40px #FF6B1A' }}
+          >
+            72
+          </div>
+        </div>
 
-      <div>
-        <p className="font-display text-green-400 text-lg mb-1">Still Standing</p>
-        <p className="font-body text-green-300/70 text-sm leading-relaxed">
-          Most people tap out before Round 20. Dad's on Round 72 and still headshoting every
-          obstacle life throws at him. No jug needed — just pure survivor instinct.
-        </p>
-      </div>
+        {/* Zombie emoji row */}
+        <div className="flex gap-1 text-2xl">
+          {[0,1,2,3,4].map(i => (
+            <motion.span
+              key={i}
+              animate={{ y: [0, -4, 0] }}
+              transition={{ repeat: Infinity, duration: 1.2, delay: i * 0.2 }}
+            >
+              🧟
+            </motion.span>
+          ))}
+          <span className="text-2xl ml-1">💀</span>
+        </div>
 
-      <div className="border-t border-green-900 pt-3">
-        <p className="font-body text-green-500/60 text-xs italic">
-          "Maxis would be proud." — Some zombie somewhere
-        </p>
+        {/* Text block — ray gun floats right so text wraps around it */}
+        <div>
+          <img
+            src={raygunImg}
+            alt="Ray Gun"
+            style={{
+              float: 'right',
+              width: 120,
+              marginLeft: 12,
+              marginBottom: 8,
+              opacity: 0.9,
+              filter: 'drop-shadow(0 0 10px #39FF14aa)',
+            }}
+          />
+          <p className="font-display text-green-400 text-lg mb-1">Still Standing</p>
+          <p className="font-body text-green-300/70 text-sm leading-relaxed">
+            Most people tap out before Round 20. Dad's on Round 72 and still headshoting every
+            obstacle life throws at him. No jug needed — just pure survivor instinct.
+          </p>
+        </div>
+
+        <div className="border-t border-green-900 pt-3" style={{ clear: 'both' }}>
+          <p className="font-body text-green-500/60 text-xs italic">
+            "Maxis would be proud." — Some zombie somewhere
+          </p>
+        </div>
       </div>
 
       {/* Corner decoration */}
       <div
         className="absolute top-3 right-4 font-display text-xs opacity-30"
-        style={{ color: '#39FF14' }}
+        style={{ color: '#39FF14', zIndex: 1 }}
       >
         ██ CLASSIFIED
       </div>
