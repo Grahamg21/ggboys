@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { showcasePennies } from '../data/pennies'
+import bannerPhoto from '../assets/photos/Dad/Dad/IMG_0913.jpeg'
 
 function PennyCard({ penny, index }) {
   const [flipped, setFlipped] = useState(false)
@@ -76,42 +77,82 @@ export default function PennyShowcase() {
   const ref = useRef(null)
 
   return (
-    <section ref={ref} className="py-20 px-4 relative" id="showcase">
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(184,115,51,0.15) 0%, transparent 70%)',
-        }}
-      />
+    <section ref={ref} className="relative" id="showcase">
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14"
-        >
-          <p className="font-body text-gd-copper tracking-[0.3em] uppercase text-sm mb-2">The Greenfield Collection</p>
-          <h2
+      {/* ── Cinematic banner ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="relative w-full overflow-hidden"
+        style={{ height: 'clamp(320px, 45vw, 540px)' }}
+      >
+        {/* Photo */}
+        <img
+          src={bannerPhoto}
+          alt="The GG Boys sorting the collection"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: 'center 30%' }}
+        />
+
+        {/* Tie-dye colour wash — very subtle */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(135deg, rgba(45,0,87,0.35) 0%, rgba(184,115,51,0.2) 50%, rgba(45,0,87,0.4) 100%)' }}
+        />
+
+        {/* Gradient: dark at top (blends with page) and bottom (text sits here) */}
+        <div className="absolute inset-0"
+          style={{ background: 'linear-gradient(to bottom, #0E0020 0%, transparent 25%, transparent 55%, #0E0020 100%)' }}
+        />
+
+        {/* Overlaid title — sits at bottom of banner */}
+        <div className="absolute bottom-0 left-0 right-0 pb-10 flex flex-col items-center text-center px-4">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="font-body text-gd-copper tracking-[0.3em] uppercase text-sm mb-2"
+          >
+            The Greenfield Collection
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.45 }}
             className="font-display gradient-text"
-            style={{ fontSize: 'clamp(32px, 6vw, 64px)' }}
+            style={{ fontSize: 'clamp(36px, 7vw, 80px)', lineHeight: 1 }}
           >
             Hall of Coins
-          </h2>
-          <div className="flex items-center justify-center gap-2 mt-3">
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="flex items-center gap-3 mt-3"
+          >
             <span
               className="font-display text-xs px-3 py-1 rounded-full border"
-              style={{ color: '#FFD700', borderColor: 'rgba(255,215,0,0.4)', background: 'rgba(255,215,0,0.08)' }}
+              style={{ color: '#FFD700', borderColor: 'rgba(255,215,0,0.5)', background: 'rgba(255,215,0,0.1)' }}
             >
               Graham's Pick
             </span>
-          </div>
-          <p className="font-body text-white/50 mt-3 max-w-lg mx-auto text-sm">
-            Ten exceptional pieces from the GG Boys collection. Tap any coin to read its story.
-          </p>
-        </motion.div>
+            <span className="font-body text-white/40 text-xs">
+              Tap any coin to read its story
+            </span>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* ── Coins grid ── */}
+      <div className="py-14 px-4 relative">
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse at 50% 0%, rgba(184,115,51,0.1) 0%, transparent 60%)' }}
+        />
+        <div className="max-w-6xl mx-auto relative z-10">
 
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -129,6 +170,7 @@ export default function PennyShowcase() {
           className="mt-16 h-px origin-left"
           style={{ background: 'linear-gradient(90deg, transparent, #B87333, #FFD700, #B87333, transparent)' }}
         />
+        </div>
       </div>
     </section>
   )
